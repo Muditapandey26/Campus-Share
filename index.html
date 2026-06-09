@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusShare — Share More. Spend Less.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="home-page">
+
+    <!-- Premium Glassmorphic Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
+    <div class="container">
+        <!-- Brand Identity with Custom Geometric SVG Logo -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2 logo-brand" href="index.html">
+            <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C12 21 6.5 17.5 3 17.5V5.5C6.5 5.5 12 9 12 9M12 21C12 21 17.5 17.5 21 17.5V5.5C17.5 5.5 12 9 12 9" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 9V21" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logo-gradient" x1="3" y1="5.5" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#06B6D4" />
+                        <stop offset="100%" stop-color="#2563EB" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="brand-text">Campus<span style="color: var(--accent-cyan);">Share</span></span>
+        </a>
+        
+        <!-- Premium Mobile Hamburger Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Nav Links Grouping -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2 pt-3 pt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" href="browse.html">Browse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" href="donate.html">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-custom" href="request.html">Requests</a>
+                </li>
+                <li class="nav-item ms-lg-2">
+                    <a class="nav-link nav-btn-custom px-3 py-2 rounded-3 text-center" href="dashboard.html">
+                        <i class="fas fa-chart-pie me-1 small"></i> Impact Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <header class="hero-gradient text-center py-5 justify-content-center align-items-center d-flex style-hero" style="min-height: 80vh;">
+        <div class="container my-5 position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <!-- Cleaned up badge to look like a real, authentic campus platform -->
+                    <span class="badge badge-custom px-3 py-2 rounded-pill text-uppercase tracking-wider mb-3">An Open-Source Student Initiative</span>
+                    <h1 class="display-2 fw-extrabold text-white mb-3" style="font-family: 'Poppins', sans-serif; letter-spacing: -1.5px; line-height: 1.1;">
+                        Share More.<br>
+                        <span class="text-gradient">Spend Less. Learn Together.</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-5 mx-auto max-w-2xl" style="font-size: 1.25rem;">
+                        The peer-to-peer student resource network. Instantly find, gift, or borrow textbooks, lab equipment, and structured notes with zero financial barriers.
+                    </p>
+                    <div class="d-sm-flex justify-content-center gap-3">
+                        <a href="browse.html" class="btn btn-accent-custom px-4 py-3 mb-2 mb-sm-0"><i class="fas fa-search me-2"></i> Find Resources</a>
+                        <a href="donate.html" class="btn btn-outline-light px-4 py-3 mb-2 mb-sm-0" style="border-radius: 10px;"><i class="fas fa-hand-holding-heart me-2"></i> List an Item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-5 mb-4 mb-md-0">
+                    <span class="text-uppercase tracking-widest text-accent-cyan fw-bold small" style="color: var(--accent-cyan);">The Campus Challenge</span>
+                    <h2 class="h1 fw-bold mt-2 mb-4">Academic materials shouldn't cost a fortune.</h2>
+                    <p class="text-muted-custom">Every semester, thousands of rupees are spent on brand-new reference books, lab gear, and study modules that get used for a few months and then sit on a shelf collecting dust. CampusShare breaks this cycle by connecting students directly.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card p-4">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="bg-danger bg-opacity-10 p-3 rounded-3 text-danger"><i class="fas fa-wallet fa-xl"></i></div>
+                            <div>
+                                <h5 class="mb-1">High Cost of Textbooks</h5>
+                                <p class="text-muted-custom small mb-0">Retail prices for engineering and reference books add unnecessary financial stress every semester.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="bg-warning bg-opacity-10 p-3 rounded-3 text-warning"><i class="fas fa-dumpster fa-xl"></i></div>
+                            <div>
+                                <h5 class="mb-1">Accumulating Resource Waste</h5>
+                                <p class="text-muted-custom small mb-0">Perfectly good lab coats, component kits, and study guides are thrown away instead of being reused.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-black bg-opacity-20 border-top border-bottom border-secondary border-opacity-10">
+        <div class="container text-center">
+            <h2 class="h1 fw-bold mb-2">United Nations SDG Alignment</h2>
+            <p class="text-muted-custom mb-5">Proudly contributing toward global sustainability and education metrics right here on campus.</p>
+            <div class="row justify-content-center gap-4">
+                <div class="col-md-5 text-start">
+                    <div class="custom-card p-4 h-100 d-flex align-items-center gap-4">
+                        <img src="assets/sdg4.png" alt="SDG 4 Graphic" class="rounded-3 shadow" style="width: 80px; height: 80px; object-fit: cover;" onerror="this.src='https://placehold.co/80x80/0F172A/06B6D4?text=SDG+4'">
+                        <div>
+                            <h4 class="h5 mb-1" style="color: #E5243B;">Goal 4: Quality Education</h4>
+                            <p class="text-muted-custom small mb-0">Ensuring every student has equal access to necessary learning tools and textbooks without resource anxiety.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 text-start">
+                    <div class="custom-card p-4 h-100 d-flex align-items-center gap-4">
+                        <img src="assets/sdg12.png" alt="SDG 12 Graphic" class="rounded-3 shadow" style="width: 80px; height: 80px; object-fit: cover;" onerror="this.src='https://placehold.co/80x80/0F172A/7C3AED?text=SDG+12'">
+                        <div>
+                            <h4 class="h5 mb-1" style="color: #DDA63A;">Goal 12: Responsible Consumption</h4>
+                            <p class="text-muted-custom small mb-0">Promoting a circular economy by recycling physical assets and materials across academic batches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-5">
+        <h2 class="h1 fw-bold text-center mb-5">How We Make a Difference</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="custom-card p-4 h-100">
+                    <div class="text-primary mb-3"><i class="fas fa-book fa-2x"></i></div>
+                    <h4 class="h5">Books Shared</h4>
+                    <p class="text-muted-custom small">Pass down reference literature and syllabus guides directly to your juniors.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card p-4 h-100">
+                    <div class="text-accent mb-3" style="color: var(--accent-cyan);"><i class="fas fa-gift fa-2x"></i></div>
+                    <h4 class="h5">Donations Circle</h4>
+                    <p class="text-muted-custom small">Give away extra calculators, component kits, or clean lab coats smoothly.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card p-4 h-100">
+                    <div class="text-warning mb-3"><i class="fas fa-exchange-alt fa-2x"></i></div>
+                    <h4 class="h5">Peer Requests</h4>
+                    <p class="text-muted-custom small">Can't find an item? Post a quick request so nearby peers can lend it out.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card p-4 h-100">
+                    <div class="text-success mb-3"><i class="fas fa-chart-line fa-2x"></i></div>
+                    <h4 class="h5">Tracked Impact</h4>
+                    <p class="text-muted-custom small">See collective statistics on financial savings and environmental waste offsets live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="border-top border-secondary border-opacity-10 py-5 mt-5">
+    <div class="container">
+        <div class="row align-items-center g-3">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-1 text-white-50 fw-semibold" style="font-size: 0.9rem; letter-spacing: -0.2px;">
+                    &copy; 2026 CampusShare Platform
+                </p>
+                <p class="text-muted-custom small mb-0">
+                    Built by students, for students. Promoting zero-waste campus lifecycles.
+                </p>
+            </div>
+            
+            <div class="col-md-6 text-center text-md-end">
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center gap-3">
+                    <a href="index.html" class="text-decoration-none text-muted-custom small footer-link-hover">Home</a>
+                    <span class="text-secondary border-start border-secondary opacity-25" style="height: 12px; display: inline-block;"></span>
+                    <a href="browse.html" class="text-decoration-none text-muted-custom small footer-link-hover">Browse</a>
+                    <span class="text-secondary border-start border-secondary opacity-25" style="height: 12px; display: inline-block;"></span>
+                    <a href="dashboard.html" class="text-decoration-none text-muted-custom small footer-link-hover">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

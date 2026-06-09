@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Dashboard — CampusShare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Extra decorative touches just for the dashboard to make it pop */
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+        /* Subtle colored glow behind each card icon */
+        .icon-glow-blue { text-shadow: 0 0 20px rgba(37, 99, 235, 0.4); }
+        .icon-glow-purple { text-shadow: 0 0 20px rgba(124, 58, 237, 0.4); }
+        .icon-glow-cyan { text-shadow: 0 0 20px rgba(6, 182, 212, 0.4); }
+        .icon-glow-green { text-shadow: 0 0 20px rgba(25, 135, 84, 0.4); }
+        
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+        }
+    </style>
+</head>
+<body id="dashboard-page">
+
+    <!-- Premium Glassmorphic Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
+    <div class="container">
+        <!-- Brand Identity with Custom Geometric SVG Logo -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2 logo-brand" href="index.html">
+            <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C12 21 6.5 17.5 3 17.5V5.5C6.5 5.5 12 9 12 9M12 21C12 21 17.5 17.5 21 17.5V5.5C17.5 5.5 12 9 12 9" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 9V21" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logo-gradient" x1="3" y1="5.5" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#06B6D4" />
+                        <stop offset="100%" stop-color="#2563EB" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="brand-text">Campus<span style="color: var(--accent-cyan);">Share</span></span>
+        </a>
+        
+        <!-- Premium Mobile Hamburger Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Nav Links Grouping -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2 pt-3 pt-lg-0">
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom" href="browse.html">Browse</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom" href="donate.html">Donate</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom" href="request.html">Requests</a></li>
+                    <a class="nav-link nav-btn-custom px-3 py-2 rounded-3 text-center" href="dashboard.html">
+                        <i class="fas fa-chart-pie me-1 small"></i> Impact Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <header class="py-5 bg-black bg-opacity-20 border-bottom border-secondary border-opacity-10">
+        <div class="container">
+            <span class="badge badge-custom mb-2">Live Platform Metrics</span>
+            <h1 class="display-5 fw-bold mb-1 text-gradient">Our Collective Impact</h1>
+            <p class="text-muted-custom mb-0">Real-time breakdown of peer-to-peer savings and sustainability across our campus network.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <div class="row g-4 mb-5">
+            
+            <!-- Books Shared -->
+            <div class="col-md-6 col-xl-3">
+                <div class="custom-card stat-card p-4 text-center">
+                    <div class="text-primary mb-2 icon-glow-blue"><i class="fas fa-book-open fa-xl"></i></div>
+                    <div class="fs-2 fw-bold text-white mb-1">
+                        <!-- We show a small baseline (e.g. 14) + dynamic addition if needed -->
+                        <span id="statBooks">14</span>
+                    </div>
+                    <div class="text-uppercase tracking-wider small font-weight-bold mb-2 text-white-50" style="font-size: 0.75rem;">Books Passed On</div>
+                    <p class="text-muted-custom small mb-0">Academic textbooks and notes kept in circulation.</p>
+                </div>
+            </div>
+
+            <!-- Lab/Tech Items -->
+            <div class="col-md-6 col-xl-3">
+                <div class="custom-card stat-card p-4 text-center" style="border-color: rgba(124, 58, 237, 0.2);">
+                    <div class="text-secondary mb-2 icon-glow-purple" style="color: var(--secondary-purple) !important;"><i class="fas fa-microscope fa-xl"></i></div>
+                    <div class="fs-2 fw-bold text-white mb-1">
+                        <span id="statDonations">5</span>
+                    </div>
+                    <div class="text-uppercase tracking-wider small font-weight-bold mb-2 text-white-50" style="font-size: 0.75rem;">Lab & Tech Tools</div>
+                    <p class="text-muted-custom small mb-0">Calculators, aprons, and component kits shared.</p>
+                </div>
+            </div>
+
+            <!-- Students Helped -->
+            <div class="col-md-6 col-xl-3">
+                <div class="custom-card stat-card p-4 text-center" style="border-color: rgba(6, 182, 212, 0.2);">
+                    <div class="text-accent mb-2 icon-glow-cyan" style="color: var(--accent-cyan);"><i class="fas fa-user-graduate fa-xl"></i></div>
+                    <div class="fs-2 fw-bold text-white mb-1">
+                        <span id="statStudents">18</span>
+                    </div>
+                    <div class="text-uppercase tracking-wider small font-weight-bold mb-2 text-white-50" style="font-size: 0.75rem;">Peers Assisted</div>
+                    <p class="text-muted-custom small mb-0">Unique campus students who saved resources.</p>
+                </div>
+            </div>
+
+            <!-- Capital Saved -->
+            <div class="col-md-6 col-xl-3">
+                <div class="custom-card stat-card p-4 text-center" style="border-color: rgba(25, 135, 84, 0.2);">
+                    <div class="text-success mb-2 icon-glow-green"><i class="fas fa-wallet fa-xl"></i></div>
+                    <div class="fs-2 fw-bold text-gradient mb-1">
+                        ₹<span id="statSavings">4,200</span>
+                    </div>
+                    <div class="text-uppercase tracking-wider small font-weight-bold mb-2 text-white-50" style="font-size: 0.75rem;">Estimated Savings</div>
+                    <p class="text-muted-custom small mb-0">Amount saved by avoiding new retail purchases.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Side: Environmental Progress Bars -->
+            <div class="col-lg-7">
+                <div class="custom-card progress-glow p-4 h-100">
+                    <h3 class="h5 fw-bold mb-3"><i class="fas fa-seedling text-success me-2"></i> Campus Green Scorecard</h3>
+                    <p class="text-muted-custom small mb-4">Tracking how our shared items translate directly into real environmental protection metrics across this term.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                <span>Paper Conservation Target</span>
+                                <span class="text-white-50 small"><strong class="text-success">65% Achieved</strong></span>
+                            </div>
+                            <div class="progress bg-dark border border-secondary" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                <span>E-Waste Landfill Diversion</span>
+                                <span class="text-white-50 small"><strong class="text-info">40% Prevented</strong></span>
+                            </div>
+                            <div class="progress bg-dark border border-secondary" style="height: 8px;">
+                                <div class="progress-bar bg-info" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between text-white-50 small mb-1">
+                                <span>Carbon Footprint Reduced</span>
+                                <span class="text-white-50 small"><strong class="text-warning">140 kg CO2e</strong></span>
+                            </div>
+                            <div class="progress bg-dark border border-secondary" style="height: 8px;">
+                                <div class="progress-bar bg-warning" style="width: 48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Tips and Guidelines -->
+            <div class="col-lg-5">
+                <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h3 class="h5 fw-bold mb-2"><i class="fas fa-shield-alt text-accent me-2" style="color: var(--accent-cyan);"></i> Safety & Guidelines</h3>
+                        <p class="text-muted-custom small mb-0">To ensure smooth interactions within our peer system, please arrange handoffs during daylight hours in highly accessible university public hubs—such as the <strong>central library corridor</strong>, <strong>main canteen lawns</strong>, or department blocks.</p>
+                    </div>
+                    <div class="bg-dark bg-opacity-40 p-3 rounded-3 border border-secondary border-opacity-10 mt-3">
+                        <span class="badge bg-secondary mb-2">Evaluation Note</span>
+                        <p class="text-muted-custom small mb-0 text-white-50">This dashboard updates values interactively via local state storage. Take screenshots once sample dataset nodes are populated before project evaluation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-top border-secondary border-opacity-10 py-4 mt-auto text-center text-muted-custom small">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 CampusShare Platform. Managed client-side for immediate presentation testing.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

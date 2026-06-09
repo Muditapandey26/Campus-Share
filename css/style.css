@@ -1,0 +1,244 @@
+/* Import Google Fonts - Inter and Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+    --bg-dark: #0F172A;
+    --bg-card: #1E293B;
+    --primary-blue: #2563EB;
+    --secondary-purple: #7C3AED;
+    --accent-cyan: #06B6D4;
+    --text-light: #F8FAFC;
+    --text-muted: #94A3B8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label {
+    color: var(--text-light); /* Forces everything to read cleanly against the background */
+}
+
+/* Glassmorphic Navbar */
+.navbar-custom {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1050;
+}
+
+/* Hero Section Gradient */
+.hero-gradient {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    position: relative;
+}
+
+.hero-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+}
+
+/* Custom Cards (Linear/Vercel Vibe) */
+.custom-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    color: var(--text-light) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(6, 182, 212, 0.5); /* Accent Cyan glow */
+    box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.15);
+}
+
+/* Gradient Text - FIXED COMPATIBILITY WARNINGS */
+.text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 30%, var(--accent-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Form Styles & Contrast Fixes */
+.form-control-custom {
+    background-color: #111827 !important; /* Rich deep grey for input fields */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important; /* Strips Bootstrap black text override */
+    border-radius: 10px;
+}
+
+.form-control-custom:focus {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.3) !important;
+    background-color: #111827 !important;
+    color: #FFFFFF !important;
+}
+
+/* Fixes default light gray placeholder text visibility */
+.form-control-custom::placeholder {
+    color: rgba(248, 250, 252, 0.4) !important; 
+}
+
+/* Fixes transparent/invisible text when editing inside standard dropdowns options selection */
+select.form-control-custom {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-position: right 0.75rem center !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px 12px !important;
+}
+
+select.form-control-custom option {
+    background-color: #1E293B !important; /* Matches slate card backgrounds */
+    color: #FFFFFF !important; /* Stops grey items on white look */
+}
+
+.form-label {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+}
+
+/* Custom Buttons */
+.btn-primary-custom {
+    background-color: var(--primary-blue);
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    color: white !important;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #1d4ed8;
+    color: white !important;
+}
+
+.btn-accent-custom {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    color: white !important;
+}
+
+/* Utilities */
+.text-muted-custom {
+    color: var(--text-muted) !important;
+}
+
+.badge-custom {
+    background-color: rgba(6, 182, 212, 0.1);
+    color: var(--accent-cyan) !important;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+/* Overriding Bootstrap list group actions formatting text */
+.list-group-item-action {
+    color: var(--text-light) !important;
+}
+.list-group-item-action:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Enhanced Navbar Brand Layout */
+.logo-brand {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+    font-size: 1.35rem !important;
+    transition: transform 0.2s ease;
+}
+
+.logo-brand:hover {
+    transform: scale(1.02);
+}
+
+.logo-svg {
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.4));
+}
+
+/* FIXED COMPATIBILITY WARNINGS */
+.brand-text {
+    background: linear-gradient(135deg, #ffffff 70%, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Luxury Interactive Navigation Links */
+.nav-link-custom {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem !important;
+    position: relative;
+    transition: color 0.25s ease !important;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--text-light) !important;
+}
+
+/* Sleek bottom underline indicator for the active page */
+.nav-link-custom.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 15%;
+    width: 70%;
+    height: 2px;
+    background-color: var(--accent-cyan);
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+/* Highlight Action Button Inside Navbar */
+.nav-btn-custom {
+    background: rgba(6, 182, 212, 0.1) !important;
+    color: var(--accent-cyan) !important;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease !important;
+}
+
+.nav-btn-custom:hover {
+    background: var(--accent-cyan) !important;
+    color: #0F172A !important;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Custom Border styling for modern toggle switch on small viewports */
+.custom-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 0.4rem 0.6rem;
+}
+
+.custom-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2) !important;
+}
+/* Premium Footer Micro-Interactions */
+.footer-link-hover {
+    transition: color 0.2s ease;
+}
+.footer-link-hover:hover {
+    color: var(--accent-cyan) !important;
+}

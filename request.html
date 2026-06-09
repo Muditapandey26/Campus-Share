@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Material — CampusShare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="request-page">
+
+  <!-- Premium Glassmorphic Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top py-3">
+    <div class="container">
+        <!-- Brand Identity with Custom Geometric SVG Logo -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2 logo-brand" href="index.html">
+            <svg class="logo-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21C12 21 6.5 17.5 3 17.5V5.5C6.5 5.5 12 9 12 9M12 21C12 21 17.5 17.5 21 17.5V5.5C17.5 5.5 12 9 12 9" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 9V21" stroke="url(#logo-gradient)" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="logo-gradient" x1="3" y1="5.5" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#06B6D4" />
+                        <stop offset="100%" stop-color="#2563EB" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="brand-text">Campus<span style="color: var(--accent-cyan);">Share</span></span>
+        </a>
+        
+        <!-- Premium Mobile Hamburger Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Nav Links Grouping -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-2 pt-3 pt-lg-0">
+                <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom" href="browse.html">Browse</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom" href="donate.html">Donate</a></li>
+<li class="nav-item"><a class="nav-link nav-link-custom active" href="request.html">Requests</a></li>
+                    <a class="nav-link nav-btn-custom px-3 py-2 rounded-3 text-center" href="dashboard.html">
+                        <i class="fas fa-chart-pie me-1 small"></i> Impact Dashboard
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main class="container my-5 py-4">
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-lg-6">
+                <div class="custom-card p-4 h-100">
+                    <div class="mb-4">
+                        <span class="text-uppercase tracking-widest text-accent-cyan fw-bold small" style="color: var(--accent-cyan);">Demand Signal</span>
+                        <h1 class="h2 fw-bold mt-1">Broadcast a Request</h1>
+                        <p class="text-muted-custom">Can't find what you need in stock? Log your requirement to notify potential donors on campus.</p>
+                    </div>
+
+                    <form id="requestForm">
+                        <div class="mb-3">
+                            <label for="requestName" class="form-label">Material Name / Title</label>
+                            <input type="text" id="requestName" class="form-control form-control-custom" placeholder="Type name (e.g., Arduino Uno Board)..." required autocomplete="off">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="requestCategory" class="form-label">Category</label>
+                                <select id="requestCategory" class="form-select form-control-custom" required>
+                                    <option value="Books">Books</option>
+                                    <option value="Lab Kits">Lab Kits</option>
+                                    <option value="Notes">Notes</option>
+                                    <option value="Electronics">Electronics</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="requestSemester" class="form-label">Target Semester</label>
+                                <input type="text" id="requestSemester" class="form-control form-control-custom" placeholder="e.g., 4th Sem" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="requestReason" class="form-label">Reason or Specific Course Code</label>
+                            <textarea id="requestReason" rows="3" class="form-control form-control-custom" placeholder="e.g., Required for ECE-202 labs this month..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-custom w-100 py-2">Submit Demand Broadcast</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="custom-card p-4 border border-info border-opacity-20 h-100" style="background: linear-gradient(180deg, #1E293B 0%, #111827 100%);">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="text-accent" style="color: var(--accent-cyan);"><i class="fas fa-microchip fa-spin-slow"></i></div>
+                        <h3 class="h5 mb-0 fw-bold">Intelligent Recommendation Engine</h3>
+                    </div>
+                    <p class="text-muted-custom small mb-4">Our matching loop intercepts keystrokes to evaluate immediate overlaps inside existing community listings.</p>
+                    
+                    <div id="liveMatches" class="p-3 bg-dark bg-opacity-50 rounded-4 border border-secondary border-opacity-10 min-height-200">
+                        <p class="text-muted-custom small mb-0">Type 3 or more characters in the form to trigger live matching results...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-top border-secondary border-opacity-10 py-4 mt-auto text-center text-muted-custom small">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 CampusShare Platform. Developed entirely client-side for immediate execution.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
